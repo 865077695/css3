@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+</head>
+<body>
+    <input class="ipt" type="text" value="">
+    <button class="btn">搜索</button>
+
+    <div class="list">
+         <ul>
+             
+         </ul>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script>
+    var $ipt = $('.ipt'),$btn = $('.btn'),$list = $('.list');
+    // match(value,);
+    $.ajax({  
+        type:"GET", 
+        url:"data.json", 
+        dataType:"json", 
+        success:function(data){
+            str = "";
+            match(str,data);
+            $ipt.keyup(function(){
+                var value = $ipt.val();
+                match(value,data);
+            });
+        },
+        error:function (result) {
+            alert("请求失败，请稍后重试");
+        }
+    });
+    function match(str,data){
+        var s = "";
+        for(var _key in data){
+            if(_key.indexOf(str)>=0){
+                s += "<li><p>"+_key+"</p>"+ "<span>Answer: "+data[_key]+"</span>" +"</li>";
+                $('ul').html(s);
+            }else if(!str){
+                s += "<li><p>"+_key+"</p>"+ "<span>Answer: "+data[_key]+"</span>" +"</li>";
+            }
+        }
+    }
+    </script>
+</body>
+</html>
