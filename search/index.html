@@ -4,21 +4,19 @@
     <meta charset="UTF-8">
     <title>search</title>
     <style>
-        *{text-align:center}
+        h3{text-align: center}
+        li{margin:0 auto;}
     </style>
 </head>
 <body>
-
 <h3>ajax请求json数据，然后根据搜索关键词显示对应条目</h3><br/>
     <input class="ipt" type="text" value="">
     <button class="btn">搜索</button>
-
     <div class="list">
          <ul>
-             
          </ul>
     </div>
-    <script src="jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script>
     var $ipt = $('.ipt'),$btn = $('.btn'),$list = $('.list');
     $.ajax({  
