@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>search</title>
+    <style>
+        *{text-align:center}
+    </style>
 </head>
 <body>
+
+<h3>ajax请求json数据，然后根据搜索关键词显示对应条目</h3><br/>
     <input class="ipt" type="text" value="">
     <button class="btn">搜索</button>
 
@@ -16,7 +21,6 @@
     <script src="jquery.min.js"></script>
     <script>
     var $ipt = $('.ipt'),$btn = $('.btn'),$list = $('.list');
-    // match(value,);
     $.ajax({  
         type:"GET", 
         url:"data.json", 
