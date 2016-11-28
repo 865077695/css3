@@ -1,0 +1,11 @@
+{
+  "name": "realtime-server",
+  "version": "0.0.1",
+  "description": "my first realtime server",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodejs-websocket": "^1.7.1",
+    "socket.io": "^1.7.1",
+    "websocket": "^1.0.23"
+  }
+}
