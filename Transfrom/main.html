@@ -5,12 +5,12 @@
     <title>3D折叠字体</title>
     <style type="text/css">
     html,body{margin:0;padding:0;height:100%;}
-    body{display:flex;align-items:center;justify-content:center;background-color:#684DA3;}/*//垂直水平居中，弹性盒子*/
+    body{display:flex;align-items:center;justify-content:center;background-color:#612;}/*//垂直水平居中，弹性盒子*/
     p{font-size:1em;color:#fff;font-weight:bold;font-family:"微软雅黑";}
-    p span{position:relative;display:inline-block;transform-style:preserve-3d;perspective:500;}
+    p span{position:relative;display:inline-block;transform-style:preserve-3d;}
     p span:before,p span:after{content:attr(data-text);position:absolute;top:0;left:-1px;display:none;transform-origin:left top;transition:all ease-out 0.3s;}
     p span:before{z-index:1;color:rgba(0,0,0,0.2);transform:scale(1.1,1) skew(0deg,20deg);}
-    p span:after{z-index:2;color:#684DA3;text-shadow:-1px 0 1px #684DA3,1px 0 1px rgba(0,0,0,0.2);transform:rotateY(-40deg);}
+    p span:after{z-index:2;color:#612;text-shadow:-1px 0 1px #684DA3,1px 0 1px rgba(0,0,0,0.2);transform:rotateY(-40deg);}
     p span:hover:before{transform:scale(1.1,1) skew(0deg,5deg);}
     p span:hover:after{transform:rotateY(-10deg);}
     p span+span{margin-left:0.1em;}
@@ -28,12 +28,11 @@
 </head>
 <body>
     <p>
-        <span data-text="某">某</span>
-        <span data-text="某">某</span>
-        <span data-text="我">我</span>
-        <span data-text="喜">喜</span>
-        <span data-text="欢">欢</span>
-        <span data-text="你">你</span>
+        <span data-text="今">今</span>
+        <span data-text="天">天</span>
+        <span data-text="有">有</span>
+        <span data-text="雨">雨</span>
+        <span data-text="？">？</span>
     </p>
 </body>
 </html>
