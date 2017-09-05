@@ -1,0 +1,65 @@
+nav {
+  width: 100px;
+  color: #123;
+  border: 1px solid #123;
+}
+
+#content article h1 {
+  color: red;
+}
+#content article p {
+  line-height: 40px;
+}
+#content aside {
+  width: 300px;
+}
+#content a {
+  color: #fff;
+}
+#content a:hover {
+  color: #123;
+}
+
+#c {
+  color: red;
+}
+body.ie #c {
+  color: green;
+}
+
+.container h1, .container h2, .container h3 {
+  color: red;
+}
+
+.container h1, .container h2, .container h3 {
+  color: red;
+}
+
+article ~ p {
+  color: red;
+}
+article > a {
+  color: red;
+}
+article + i {
+  color: green;
+}
+nav + article {
+  font-size: 14px;
+}
+
+nav {
+  border-style: solid;
+  border-width: 1px;
+  border-color: green;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+nav {
+  border: 1px solid red;
+  border-left: 0px;
+  border-bottom: 0px;
+}
+
+/*# sourceMappingURL=1.css.map */

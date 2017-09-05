@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 和p同级的 p之后的所有a标签 */
+    p ~a {color:red;}
+    article ~p{color: red}
+    article+i{color:green}
+  </style>
+</head>
+
+<body>
+  <article>
+    <i>asd</i>
+  </article>
+  <i>dsa</i>
+  <i>dsaaw</i>
+  <p>das</p>
+</body>
+
+</html>

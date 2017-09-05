@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>如何创建自定义元素</title>
+</head>
+
+<body>
+
+  <script>
+    // var myHtml = document.registerElement('my-html');
+    // document.body.appendChild(new myHtml());
+    // console.log(document.getElementsByTagName('my-html'));
+    // 将HTMLElement.prototype传给这个方法，创建一个对象。这个对象和标准的HTML的方法和属性相同
+    myHtmlProto = Object.create(HTMLElement.prototype);
+    // 然后可以在这个新对象上定义一些自己的方法
+    myHtmlProto.hello = function () {
+      alert('Hello!');
+    }
+    Object.defineProperty(myHtmlProto, 'badges', {
+      value: 20,
+      writable: true
+    })
+
+    myHtml = document.registerElement('my-html', {
+      prototype: myHtmlProto
+    })
+
+    var myhtml = new myHtml();
+    document.body.appendChild(myhtml);
+
+    var badges = myhtml.badges;
+    console.log(badges);
+    console.log(myhtml);
+    function createMyHtml(select) {
+      var myHtml = document.registerElement(select);
+
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+// $声明变量 $width为局部变量,另需注意-和_一样。会被认为是同一个变量
+$highLight-color:#f90;
+$highLight_color: #123;
+nav{
+  $width: 100px;
+  width: $width;
+  color: $highLight-color;
+  border: 1px solid $highLight-color;
+}
+
+// 嵌套
+// 父选择器标识符&
+#content{
+  article{
+    h1{ color: red}
+    p{line-height: 40px;}
+  }
+  aside{width:300px;}
+  a{
+    color: #fff;
+    &:hover{color:#123}   // &就表示a标签啦
+  }
+}
+
+#c{
+  color:red;
+  body.ie & {color:green;}
+}
+
+// 群组选择器
+.container h1,.container h2, .container h3{color:red}
+// 简写成：
+.container{
+  h1,h2,h3{color: red;}
+}
+
+// 子组合选择器和同层组合选择器：>、+和~;
+article {
+  ~p{color: red;}   // article后所有的和article同级的p标签
+  >a{color:red;}    // article > a{color:red}
+  +i{color:green;}  // article同级的紧跟的i标签
+  nav + &{font-size: 14px;} // nav+article而不是article nav + article
+}
+
+// 嵌套属性
+nav{
+  border: {
+    style: solid ;
+    width: 1px;
+    color:green;
+    left:0;
+    bottom:0;
+  }
+}
+nav {
+  border:1px solid red {
+    left: 0px;bottom:0px;
+  }
+}
