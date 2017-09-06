@@ -7,7 +7,6 @@ nav{
   color: $highLight-color;
   border: 1px solid $highLight-color;
 }
-
 // 嵌套
 // 父选择器标识符&
 #content{
@@ -33,6 +32,7 @@ nav{
 .container{
   h1,h2,h3{color: red;}
 }
+@import "2"; 
 
 // 子组合选择器和同层组合选择器：>、+和~;
 article {
@@ -57,3 +57,46 @@ nav {
     left: 0px;bottom:0px;
   }
 }
+$default-width: 200px;
+// 定义一个变量，这个变量有一个默认值，这个默认值的优先级最低
+$default-width: 100px !default;
+.default {
+width: $default-width;    // 200px
+}
+
+// 嵌套导入
+// 会将3.scss的所有内容放在导入的位置
+.blue-theme {@import "3"}
+
+
+// 混合器
+@mixin rounded-corners{ // 使用定义一段基础代码。
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.notice{
+  background: #aaa;
+  color:#fff;
+  @include rounded-corners;   // 使用@include引入mixin代码段
+}
+
+// 给混合器传参
+@mixin link-color($normal, $hover,$visited){
+  color: $normal;
+  &:hover{color: $hover;}
+  &:visited{ color: $visited;}
+}
+
+a{@include link-color($normal:#aaa, $hover:#bbb, $visited:#ccc)}    // 可以加上变量名，这样参数顺序就无所谓了，但是如果有一个加，那么所有的都要加
+
+// 默认参数值
+@mixin link-color-1($normal, $hover:$normal,$visited:$normal){
+  color: $normal;
+  &:hover{color:$hover}
+  &:visited{color:$visited}
+}
+
+.a1{@include link-color-1(#ddd)}
+
+// 使用选择器继承来精简css

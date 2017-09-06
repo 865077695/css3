@@ -35,6 +35,10 @@ body.ie #c {
   color: red;
 }
 
+body {
+  color: #aaa;
+}
+
 article ~ p {
   color: red;
 }
@@ -60,6 +64,43 @@ nav {
   border: 1px solid red;
   border-left: 0px;
   border-bottom: 0px;
+}
+
+.default {
+  width: 200px;
+}
+
+.blue-theme aside {
+  background: blue;
+  color: #fff;
+}
+
+.notice {
+  background: #aaa;
+  color: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+a {
+  color: #aaa;
+}
+a:hover {
+  color: #bbb;
+}
+a:visited {
+  color: #ccc;
+}
+
+.a1 {
+  color: #ddd;
+}
+.a1:hover {
+  color: #ddd;
+}
+.a1:visited {
+  color: #ddd;
 }
 
 /*# sourceMappingURL=1.css.map */
