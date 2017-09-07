@@ -103,4 +103,17 @@ a:visited {
   color: #ddd;
 }
 
+.error, .seriousError {
+  border: 1px solid red;
+  background: #ffd;
+}
+
+.error a, .seriousError a {
+  color: red;
+}
+
+.seriousError {
+  border-width: 3px;
+}
+
 /*# sourceMappingURL=1.css.map */

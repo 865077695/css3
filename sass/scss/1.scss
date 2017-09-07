@@ -100,3 +100,12 @@ a{@include link-color($normal:#aaa, $hover:#bbb, $visited:#ccc)}    // 可以加
 .a1{@include link-color-1(#ddd)}
 
 // 使用选择器继承来精简css
+.error{
+  border:1px solid red;
+  background: #ffd;
+}
+.error a{color:red;}    // error 内部设置的样式也会被通过@extend继承
+.seriousError{
+  @extend .error;
+  border-width:3px;
+}
